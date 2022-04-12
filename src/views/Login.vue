@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import http from '@/http'
 
 export default {
   data() {
@@ -30,8 +30,8 @@ export default {
 
   methods: {
     efetuarLogin() {
-      axios
-        .post('http://localhost:8000/auth/login', this.usuario)
+      http
+        .post('/auth/login', this.usuario)
         .then(resposta => {
           localStorage.setItem('token', resposta.data.access_token)
           this.$router.push({ name: 'gerentes' })
