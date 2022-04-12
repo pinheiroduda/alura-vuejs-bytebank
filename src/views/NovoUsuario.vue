@@ -35,8 +35,8 @@ export default {
     enviarFormulario() {
       this.$http
         .post('/auth/register', this.usuario)
-        .then(resposta => {
-          console.log(resposta)
+        .then(response => {
+          console.log(response)
           this.$router.push({ name: 'login' })
         })
         .catch(erro => console.log(erro))

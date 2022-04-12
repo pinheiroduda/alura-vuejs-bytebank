@@ -30,8 +30,8 @@ export default {
     efetuarLogin() {
       this.$http
         .post('/auth/login', this.usuario)
-        .then(resposta => {
-          localStorage.setItem('token', resposta.data.access_token)
+        .then(response => {
+          localStorage.setItem('token', response.data.access_token)
           this.$router.push({ name: 'gerentes' })
         })
         .catch(erro => console.log(erro))
