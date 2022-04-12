@@ -12,6 +12,10 @@ const mutations = {
   DEFINIR_USUARIO_LOGADO(state, { token, usuario }) {
     state.token = token
     state.usuario = usuario
+  },
+  DESLOGAR_USUARIO(state) {
+    // eslint-disable-next-line no-extra-semi
+    ;(state.token = null), (state.usuario = {})
   }
 }
 
