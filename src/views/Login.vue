@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import http from '@/http'
-
 export default {
   data() {
     return {
@@ -30,7 +28,7 @@ export default {
 
   methods: {
     efetuarLogin() {
-      http
+      this.$http
         .post('/auth/login', this.usuario)
         .then(resposta => {
           localStorage.setItem('token', resposta.data.access_token)
