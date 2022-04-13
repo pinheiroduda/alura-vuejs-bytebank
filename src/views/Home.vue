@@ -8,14 +8,10 @@
 </template>
 
 <script>
+import { logoutMixin } from '@/mixins'
+
 export default {
   name: 'home',
-
-  methods: {
-    efetuarLogout() {
-      this.$store.commit('DESLOGAR_USUARIO')
-      this.$router.push({ name: 'login' })
-    }
-  }
+  mixins: [logoutMixin]
 }
 </script>
