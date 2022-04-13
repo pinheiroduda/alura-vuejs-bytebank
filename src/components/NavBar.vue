@@ -15,6 +15,8 @@
 import NavBarLoggedIn from './NavBarLoggedIn'
 import NavBarLoggedOut from './NavBarLoggedOut'
 
+import { mapGetters } from 'vuex'
+
 export default {
   components: {
     NavBarLoggedIn,
@@ -22,9 +24,7 @@ export default {
   },
 
   computed: {
-    usuarioEstaLogado() {
-      return Boolean(this.$store.state.token)
-    }
+    ...mapGetters(['usuarioEstaLogado'])
   }
 }
 </script>
