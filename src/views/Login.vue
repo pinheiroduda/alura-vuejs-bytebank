@@ -34,6 +34,7 @@ export default {
         .dispatch('efetuarLogin', this.usuario)
         .then(() => {
           this.$router.push({ name: 'gerentes' })
+          this.mensagemErro = ''
         })
         .catch(err => {
           if (err.request.status === 401) {
