@@ -6,7 +6,7 @@ import Gerentes from '../views/Gerentes.vue'
 import NovoUsuario from '../views/NovoUsuario.vue'
 import Login from '../views/Login.vue'
 
-import provedor from '@/provedor'
+import store from '@/store'
 
 Vue.use(VueRouter)
 
@@ -44,7 +44,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((routeTo, routeFrom, next) => {
-  if (!routeTo.meta.public && !provedor.state.token) {
+  if (!routeTo.meta.public && !store.state.token) {
     return next({ path: '/login' })
   }
   next()
